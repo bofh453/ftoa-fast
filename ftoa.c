@@ -211,10 +211,10 @@ nanzero:
     f2.i &= 0x007fffff;
     f2.i <<= 1;
     uval = f2.i;
-    s[k++] = '0';
-    s[k++] = 'x';
-    s[k++] = '1';
-    s[k++] = '.';
+    s[0] = '0';
+    s[1] = 'x';
+    s[2] = '1';
+    s[3] = '.';
     while(k--) {
         tmp = (uval & 0x0f);
         s[4+k] = hex[tmp]; uval >>= 4;
@@ -229,6 +229,6 @@ nanzero:
     s[12] = (mk / 10)+0x30;
     s[13] = (mk % 10)+0x30;
     s[14] = 0;
-    return 13;
+    return 14;
 }
 
