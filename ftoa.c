@@ -49,8 +49,8 @@ multiply(uint64_t x, uint32_t y)
 static int
 k_comp(int n)
 {
-    float ds = n*0.30103f;
-    int k = (int)ds;
+    /* k = n * log(2); */
+    int32_t k = (int32_t)n * 97879 / 325147;
     return n < 0 ? k - 1 : k;
 }
 
